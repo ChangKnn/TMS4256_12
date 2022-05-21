@@ -1,4 +1,7 @@
+from audioop import add
 from os import fdopen
+
+from sympy import Add
 # Write
 #  ADDR1          (1111111111XX111) 
 #  ADDR1           (1111111111XX010) 
@@ -71,6 +74,9 @@ f = open("C:/Users/Chang/Desktop/信诺达/FUN.mdc","w")
 # for x in range(addrNum):
 #     for y in range(addrNum):
 #         write(x, y, 0)
+
+for col in range(addrNum):
+    
 
 for x in range(addrNum):
     col = x       # Start Col

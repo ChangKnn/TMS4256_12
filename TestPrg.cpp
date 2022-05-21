@@ -33,7 +33,7 @@ void PASCAL TMS4256_01()
     BIN(2);
   }
 
-//VOl-TEST
+//VOL-TEST
 
   SET_DPS(1,5,V,200,MA);
   SET_INPUT_LEVEL(3,0);
@@ -88,7 +88,12 @@ void PASCAL TMS4256_01()
 //IDD1_TEST
   SET_DPS(1,5,V,200,MA);
   RUN_PATTERN(11,1,0,0);
-  if (!DPS_MEASURE(DPS1,R250MA,1,"IDD1",MA,70,No_LoLimit)) {
+  if (!DPS_MEASURE(DPS1,R250MA,1,"IDD1_W",MA,65,No_LoLimit)) {
+    BIN(6);
+  }
+
+  RUN_PATTERN(19,1,0,0);
+  if (!DPS_MEASURE(DPS1,R250MA,1,"IDD1_R",MA,65,No_LoLimit)) {
     BIN(6);
   }
 
@@ -102,18 +107,18 @@ void PASCAL TMS4256_01()
 //IDD3_TEST
   SET_DPS(1,5,V,200,MA);
   RUN_PATTERN(13,1,0,0);
-  if (!DPS_MEASURE(DPS1,R250MA,1,"IDD3",MA,70,No_LoLimit)) {
+  if (!DPS_MEASURE(DPS1,R250MA,1,"IDD3",MA,53,No_LoLimit)) {
     BIN(8);
   }
 
 //IDD4_TEST
   SET_DPS(1,5,V,200,MA);
   RUN_PATTERN(12,1,0,0);
-  if (!DPS_MEASURE(DPS1,R250MA,1,"IDD4",MA,60,No_LoLimit)) {
+  if (!DPS_MEASURE(DPS1,R250MA,1,"IDD4",MA,45,No_LoLimit)) {
     BIN(9);
   }
 
-  //EARLY_WRITE TEST
+//EARLY_WRITE TEST
   if(!RUN_PATTERN("FUN EW",7,1,0,100)){
     BIN(10);
   }
@@ -143,7 +148,8 @@ void PASCAL TMS4256_01()
   
 
 //FUN TEST
-  if(!RUN_PATTERN("FUN_TEST",17,1,0,0)){
+RUN_PATTERN(17,1,2,0)
+  if(!RUN_PATTERN("FUN_TEST",18,1,2,0)){
 	BIN(14);
   }
 }
