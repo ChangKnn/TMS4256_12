@@ -92,7 +92,7 @@ void PASCAL TMS4256_01()
     BIN(6);
   }
 
-  RUN_PATTERN(19,1,0,0);
+  RUN_PATTERN(20,1,0,0);
   if (!DPS_MEASURE(DPS1,R250MA,1,"IDD1_R",MA,65,No_LoLimit)) {
     BIN(6);
   }
@@ -136,6 +136,16 @@ void PASCAL TMS4256_01()
     BIN(12);
   }
 
+//REFRESH TEST AUTO
+  RUN_PATTERN(14,1,0,0);
+  Delay(3);
+  RUN_PATTERN(18,1,0,0);
+  Delay(2);
+  if (!RUN_PATTERN("FUN FRESH",16,1,0,0))
+  {
+    BIN(13);
+  }
+
 //REFRESH TEST
   RUN_PATTERN(14,1,0,0);
   Delay(3);
@@ -148,8 +158,8 @@ void PASCAL TMS4256_01()
   
 
 //FUN TEST
-RUN_PATTERN(17,1,2,0)
-  if(!RUN_PATTERN("FUN_TEST",18,1,2,0)){
+RUN_PATTERN(18,1,2,0)
+  if(!RUN_PATTERN("FUN_TEST",19,1,2,0)){
 	BIN(14);
   }
 }

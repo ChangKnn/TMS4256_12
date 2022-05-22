@@ -1,5 +1,15 @@
 # TMS4256_12
 
+## Changelog
+
+### 2022/5/22
+
+- 新增读状态IDD1
+- 新增automatic refresh
+- 更新对角线测试说明
+- 改变图形文件中序号
+- 变化TestPrg.cpp中对应RUN_PATTERN的图形号
+
 ## CON-TEST 
 
 连通性测试
@@ -72,6 +82,10 @@ ROW:111111111 COL:000000000
 
 首先对ROW:111111111 COL:000000000写1。因为最大刷新时间为4ms,所以延迟3ms进行一次刷新操作。  
 接着再延时2ms对相同地址读操作。若读出高电平则测试成功。
+
+测试刷新模式：  
+- automatic refresh
+- $RAS-only refresh
 
 ## FUN TEST
 

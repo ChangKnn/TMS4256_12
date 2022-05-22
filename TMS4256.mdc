@@ -442,9 +442,24 @@ E ADDR1          (1111111111XX111)
  LOOP,E          (1111111111XX111)
  INCAR1          (1111111111XX111) 
  LOOP,D          (1111111111XX111)
- HALT            (1111111111XX111)                  
+ HALT            (1111111111XX111)   
 
-START_INDEX(18)  { FUN_TEST }      //FUN_TEST
+START_INDEX(18)  { AUTO_REFRESH }      //AUTO_REFRESH_TEST
+                 {AAAAAAAAACQNDWR}
+                 {012345678A C  A}
+ INC             (1111111111XX110)
+ INC             (1111111111XX110)
+ INC             (1111111111XX111)
+ INC             (1111111110XX111)
+ INC             (1111111110XX111)
+ INC             (1111111110XX110)
+ INC             (1111111110XX110)
+ INC             (1111111110XX110)
+ INC             (1111111111XX110)
+ INC             (1111111111XX111)
+ HALT            (1111111111XX111)                
+
+START_INDEX(19)  { FUN_TEST }      //FUN_TEST
                  {AAAAAAAAACQNDWR}
                  {012345678A C  A}
                  {AAAAAAAAACQNDWR}
@@ -529,7 +544,7 @@ K ADDR1          (1111111111XX011)
  LOOP,F          (1111111111XX111)
  HALT            (1111111111XX111) 
 
-START_INDEX(19)  { R1 }      //R1_TEST
+START_INDEX(20)  { R1 }      //R1_TEST
                  {AAAAAAAAACQNDWR}
                  {012345678A C  A}
  INC             (1111111111XX111) 
