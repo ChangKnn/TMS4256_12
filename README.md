@@ -6,7 +6,7 @@
 
 - 新增读状态IDD1
 - 新增automatic refresh
-- 更新对角线测试说明
+- 更新IDD1、刷新测试、对角线测试说明
 - 改变图形文件中序号
 - 变化TestPrg.cpp中对应RUN_PATTERN的图形号
 
